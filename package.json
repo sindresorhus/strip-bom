@@ -1,6 +1,6 @@
 {
   "name": "strip-bom",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Strip UTF-8 byte order mark (BOM) from a string/buffer",
   "license": "MIT",
   "repository": "sindresorhus/strip-bom",
