@@ -39,6 +39,9 @@
     "buffer",
     "string"
   ],
+  "dependencies": {
+    "is-utf8": "^0.2.0"
+  },
   "devDependencies": {
     "mocha": "*"
   }

@@ -1,12 +1,15 @@
 'use strict';
+var isUtf8 = require('is-utf8');
+
 module.exports = function (arg) {
 	if (typeof arg === 'string') {
 		return arg.replace(/\uFEFF/g, '');
 	}
 
-	if (Buffer.isBuffer(arg)) {
-		return arg[0] === 0xEF && arg[1] === 0xBB && arg[2] === 0xBF ? arg.slice(3) : arg;
+	if (Buffer.isBuffer(arg) && isUtf8(arg) &&
+		arg[0] === 0xEF && arg[1] === 0xBB && arg[2] === 0xBF) {
+		return arg.slice(3);
 	}
 
-	throw new TypeError('Expected a string or buffer');
+	return arg;
 };
