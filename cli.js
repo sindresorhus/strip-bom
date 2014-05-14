@@ -5,12 +5,6 @@ var pkg = require('./package.json');
 var stripBom = require('./index');
 var input = process.argv[2];
 
-function stdin(cb) {
-	var ret = '';
-	process.stdin.on('data', function (data) { ret += data });
-	process.stdin.on('end', cb.bind(null, ret));
-}
-
 function help() {
 	console.log(pkg.description);
 	console.log('');
@@ -20,10 +14,6 @@ function help() {
 	console.log('');
 	console.log('Example');
 	console.log('  $ strip-bom unicorn.txt > unicorn-without-bom.txt');
-}
-
-function init(data) {
-	process.stdout.write(stripBom(data));
 }
 
 if (process.argv.indexOf('-h') !== -1 || process.argv.indexOf('--help') !== -1) {
@@ -42,7 +32,7 @@ if (process.stdin.isTTY) {
 		return;
 	}
 
-	init(fs.readFileSync(input));
+	fs.createReadStream(input).pipe(stripBom.stream()).pipe(process.stdout);
 } else {
-	stdin(init);
+	process.stdin.pipe(stripBom.stream()).pipe(process.stdout);
 }
