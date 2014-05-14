@@ -1,7 +1,7 @@
 'use strict';
 var isUtf8 = require('is-utf8');
 
-module.exports = function (arg) {
+var stripBom = module.exports = function (arg) {
 	if (typeof arg === 'string') {
 		return arg.replace(/^\uFEFF/g, '');
 	}
@@ -12,4 +12,19 @@ module.exports = function (arg) {
 	}
 
 	return arg;
+};
+
+stripBom.stream = function () {
+	var through = require('through2');
+	var first = true;
+
+	return through(function (chunk, enc, cb) {
+		if (first) {
+			first = false;
+			chunk = stripBom(chunk);
+		}
+
+		this.push(chunk);
+		cb();
+	});
 };

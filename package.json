@@ -1,7 +1,7 @@
 {
   "name": "strip-bom",
   "version": "0.2.1",
-  "description": "Strip UTF-8 byte order mark (BOM) from a string/buffer",
+  "description": "Strip UTF-8 byte order mark (BOM) from a string/buffer/stream",
   "license": "MIT",
   "repository": "sindresorhus/strip-bom",
   "bin": {
@@ -37,12 +37,16 @@
     "trim",
     "text",
     "buffer",
-    "string"
+    "string",
+    "stream",
+    "streams"
   ],
   "dependencies": {
-    "is-utf8": "^0.2.0"
+    "is-utf8": "^0.2.0",
+    "through2": "^0.4.1"
   },
   "devDependencies": {
+    "concat-stream": "^1.4.5",
     "mocha": "*"
   }
 }
