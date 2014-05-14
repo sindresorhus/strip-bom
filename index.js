@@ -3,7 +3,7 @@ var isUtf8 = require('is-utf8');
 
 module.exports = function (arg) {
 	if (typeof arg === 'string') {
-		return arg.replace(/\uFEFF/g, '');
+		return arg.replace(/^\uFEFF/g, '');
 	}
 
 	if (Buffer.isBuffer(arg) && isUtf8(arg) &&
