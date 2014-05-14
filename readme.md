@@ -42,8 +42,6 @@ fs.createReadStream('unicorn.txt')
 
 ## CLI
 
-You can also use it as a CLI app by installing it globally:
-
 ```sh
 $ npm install --global strip-bom
 ```
@@ -62,4 +60,4 @@ Example
 
 ## License
 
-[MIT](http://opensource.org/licenses/MIT) © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](http://sindresorhus.com)

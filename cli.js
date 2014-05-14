@@ -16,12 +16,12 @@ function help() {
 	console.log('  $ strip-bom unicorn.txt > unicorn-without-bom.txt');
 }
 
-if (process.argv.indexOf('-h') !== -1 || process.argv.indexOf('--help') !== -1) {
+if (process.argv.indexOf('--help') !== -1) {
 	help();
 	return;
 }
 
-if (process.argv.indexOf('-v') !== -1 || process.argv.indexOf('--version') !== -1) {
+if (process.argv.indexOf('--version') !== -1) {
 	console.log(pkg.version);
 	return;
 }
