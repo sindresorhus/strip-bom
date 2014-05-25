@@ -15,16 +15,10 @@ var stripBom = module.exports = function (arg) {
 };
 
 stripBom.stream = function () {
-	var through = require('through2');
-	var first = true;
+	var firstChunk = require('first-chunk-stream');
 
-	return through(function (chunk, enc, cb) {
-		if (first) {
-			first = false;
-			chunk = stripBom(chunk);
-		}
-
-		this.push(chunk);
+	return firstChunk({minSize: 3}, function (chunk, enc, cb) {
+		this.push(stripBom(chunk));
 		cb();
 	});
 };

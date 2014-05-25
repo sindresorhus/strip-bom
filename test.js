@@ -32,3 +32,12 @@ it('should support streams', function (cb) {
 			cb();
 		}));
 });
+
+it('should support streams with low `highWaterMark`', function (cb) {
+	fs.createReadStream('fixture-utf8', {highWaterMark: 1})
+		.pipe(stripBom.stream())
+		.pipe(concat(function (data) {
+			assert.strictEqual(data.toString(), 'Unicorn\n');
+			cb();
+		}));
+});
