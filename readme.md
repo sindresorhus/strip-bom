@@ -46,11 +46,11 @@ $ npm install --global strip-bom
 $ strip-bom --help
 
   Usage
-    strip-bom <file> > <new-file>
-    cat <file> | strip-bom > <new-file>
+    $ strip-bom <file> > <new-file>
+    $ cat <file> | strip-bom > <new-file>
 
   Example
-    strip-bom unicorn.txt > unicorn-without-bom.txt
+    $ strip-bom unicorn.txt > unicorn-without-bom.txt
 ```
 
 

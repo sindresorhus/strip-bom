@@ -42,7 +42,8 @@
   ],
   "dependencies": {
     "first-chunk-stream": "^1.0.0",
-    "is-utf8": "^0.2.0"
+    "is-utf8": "^0.2.0",
+    "meow": "^3.3.0"
   },
   "devDependencies": {
     "concat-stream": "^1.4.5",
