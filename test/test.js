@@ -2,7 +2,9 @@
 var assert = require('assert');
 var fs = require('fs');
 var concat = require('concat-stream');
-var stripBom = require('./');
+var stripBom = require('../');
+
+process.chdir(__dirname);
 
 it('should strip BOM from UTF-8 string/buffer', function () {
 	assert.strictEqual(stripBom(fs.readFileSync('fixture-utf8', 'utf8')), 'Unicorn\n');

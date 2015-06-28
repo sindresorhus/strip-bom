@@ -9,7 +9,7 @@ From Wikipedia:
 
 ## Usage
 
-```sh
+```
 $ npm install --save strip-bom
 ```
 
@@ -17,11 +17,11 @@ $ npm install --save strip-bom
 var fs = require('fs');
 var stripBom = require('strip-bom');
 
-stripBom('\ufeffUnicorn');
-//=> Unicorn
+stripBom('\uFEFFunicorn');
+//=> 'unicorn'
 
 stripBom(fs.readFileSync('unicorn.txt'));
-//=> Unicorn
+//=> 'unicorn'
 ```
 
 Or as a [Transform stream](http://nodejs.org/api/stream.html#stream_class_stream_transform):
@@ -38,7 +38,7 @@ fs.createReadStream('unicorn.txt')
 
 ## CLI
 
-```sh
+```
 $ npm install --global strip-bom
 ```
 
