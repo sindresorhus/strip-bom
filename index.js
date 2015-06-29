@@ -1,7 +1,7 @@
 'use strict';
 var isUtf8 = require('is-utf8');
 
-var stripBom = module.exports = function (x) {
+module.exports = function (x) {
 	// Catches EFBBBF (UTF-8 BOM) because the buffer-to-string
 	// conversion translates it to FEFF (UTF-16 BOM)
 	if (typeof x === 'string' && x.charCodeAt(0) === 0xFEFF) {
@@ -14,13 +14,4 @@ var stripBom = module.exports = function (x) {
 	}
 
 	return x;
-};
-
-stripBom.stream = function () {
-	var firstChunk = require('first-chunk-stream');
-
-	return firstChunk({minSize: 3}, function (chunk, enc, cb) {
-		this.push(stripBom(chunk));
-		cb();
-	});
 };
