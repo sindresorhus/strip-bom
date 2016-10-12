@@ -1,5 +1,5 @@
 'use strict';
-module.exports = x => {
+module.exports = function (x) {
 	if (typeof x !== 'string') {
 		throw new TypeError('Expected a string, got ' + typeof x);
 	}
