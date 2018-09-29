@@ -1,6 +1,6 @@
 # strip-bom [![Build Status](https://travis-ci.org/sindresorhus/strip-bom.svg?branch=master)](https://travis-ci.org/sindresorhus/strip-bom)
 
-> Strip UTF-8 [byte order mark](http://en.wikipedia.org/wiki/Byte_order_mark#UTF-8) (BOM) from a string
+> Strip UTF-8 [byte order mark](https://en.wikipedia.org/wiki/Byte_order_mark#UTF-8) (BOM) from a string
 
 From Wikipedia:
 
@@ -23,7 +23,7 @@ From Wikipedia:
 ## Install
 
 ```
-$ npm install --save strip-bom
+$ npm install strip-bom
 ```
 
 
