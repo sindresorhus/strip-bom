@@ -37,6 +37,11 @@ stripBom('\uFEFFunicorn');
 ```
 
 
+## Security
+
+To report a security vulnerability, please use the [Tidelift security contact](https://tidelift.com/security). Tidelift will coordinate the fix and disclosure.
+
+
 ## Related
 
 - [strip-bom-cli](https://github.com/sindresorhus/strip-bom-cli) - CLI for this module
