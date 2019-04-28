@@ -8,6 +8,6 @@ test('strips BOM from string', t => {
 });
 
 test('strips BOM from the beginning of a file', t => {
-	const f = fs.readFileSync(path.join(__dirname, 'fixture-utf8-bom-middle'), 'utf8');
-	t.is(stripBom(f), f);
+	const fixture = fs.readFileSync(path.join(__dirname, 'fixture-utf8-bom-middle'), 'utf8');
+	t.is(stripBom(fixture), fixture);
 });
