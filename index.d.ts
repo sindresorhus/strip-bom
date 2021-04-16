@@ -3,12 +3,10 @@ Strip UTF-8 [byte order mark](https://en.wikipedia.org/wiki/Byte_order_mark#UTF-
 
 @example
 ```
-import stripBom = require('strip-bom');
+import stripBom from 'strip-bom';
 
 stripBom('\uFEFFunicorn');
 //=> 'unicorn'
 ```
 */
-declare function stripBom(string: string): string;
-
-export = stripBom;
+export default function stripBom(string: string): string;

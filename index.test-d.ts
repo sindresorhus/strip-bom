@@ -1,4 +1,4 @@
 import {expectType} from 'tsd';
-import stripBom = require('.');
+import stripBom from './index.js';
 
 expectType<string>(stripBom('\uFEFFunicorn'));
